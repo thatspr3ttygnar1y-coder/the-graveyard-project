@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Submit a Record</title>
+  <link rel="stylesheet" href="css/style.css/style.css">
+</head>
+<body>
+  <a id="backButton" href="index.html">← Home</a>
+
+  <main class="search-container">
+    <h1>Submit a Record</h1>
+
+    <form id="submitForm">
+      <input type="text" id="name" name="name" placeholder="Name" required>
+      <input type="text" id="cemetery" name="cemetery" placeholder="Cemetery">
+      <input type="number" id="year" name="year" placeholder="Year of Death">
+      <textarea id="bio" name="bio" placeholder="Additional details"></textarea>
+      <button type="submit" class="search-button">Submit</button>
+    </form>
+
+    <div id="submitResult" aria-live="polite" style="margin-top:12px;color:#1b1b1b;"></div>
+  </main>
+
+  <script>
+    document.getElementById('submitForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      document.getElementById('submitResult').textContent = 'Thank you — submission recorded locally.';
+      this.reset();
+    });
+  </script>
+</body>
+</html>

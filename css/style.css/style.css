@@ -1,0 +1,192 @@
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 32px;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #111111;
+    background: linear-gradient(180deg, #f4f5f6 0%, #eef0f2 60%, #e6e8ea 100%);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Improve touch target sizes and spacing for accessibility */
+a, button {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+nav a {
+    display: inline-block;
+    padding: 10px 14px;
+    margin-right: 10px;
+    border-radius: 6px;
+}
+
+/* Ensure interactive controls meet recommended touch target (44x44px) */
+.search-controls input[type="text"],
+.search-controls input[type="number"],
+.search-controls select,
+.search-button,
+a, button {
+    min-height: 44px;
+    min-width: 44px;
+}
+
+/* Slightly larger spacing between results/cards for easier tapping */
+.search-results { gap: 16px; }
+.grave-card { margin: 18px auto; }
+
+/* Visible focus styles for keyboard users */
+a:focus, button:focus, .grave-card:focus, .grave-card a:focus {
+    outline: 3px solid rgba(241,198,107,0.24);
+    outline-offset: 3px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* Ensure anchor-styled grave-cards remove default link styles */
+.grave-card {
+    text-decoration: none;
+}
+
+.grave-card h3, .grave-card p { color: inherit; }
+
+/* Center content blocks and keep them readable */
+.grave-card {
+    width: 100%;
+    max-width: 900px;
+    margin: 14px auto;
+    padding: 18px 20px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #161616 0%, #242424 100%);
+    border: 1px solid rgba(255,255,255,0.04);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+    color: #efeae4;
+    cursor: pointer;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.grave-card h3 {
+    margin: 0 0 6px 0;
+    color: #f1c66b;
+    font-size: 1.4rem;
+    letter-spacing: 0.4px;
+}
+
+.grave-card p {
+    margin: 0;
+    color: #dcd7d2;
+}
+
+.grave-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.7);
+    background: linear-gradient(180deg, #1b1b1b 0%, #2f2f2f 100%);
+}
+
+/* Back button styling to remain respectful and visible */
+#backButton {
+    display: inline-block;
+    padding: 10px 16px;
+    margin: 12px 12px 18px 0;
+    background-color: #f8f1df;
+    color: #1b1b1b;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 999px;
+    outline: 3px solid rgba(241,198,107,0.18);
+    cursor: pointer;
+    transition: box-shadow 0.12s, transform 0.08s;
+}
+
+#backButton:hover {
+    box-shadow: 0 6px 18px rgba(241,198,107,0.12);
+    transform: translateY(-2px);
+}
+
+/* Responsive: tighter padding on small screens */
+@media (max-width: 600px) {
+    body { padding: 18px; }
+    .grave-card { padding: 14px; }
+    .grave-card h3 { font-size: 1.15rem; }
+}
+
+/* Make regular links dark to match page tone (remove default browser blue) */
+a, a:visited {
+    color: #111111;
+    text-decoration: underline;
+}
+
+/* Slight accent on hover to show interactivity */
+a:hover {
+    color: #8b6f2f;
+}
+
+/* Links inside cards keep the warm accent for emphasis */
+.grave-card a, .grave-card a:visited {
+    color: #f1c66b;
+}
+
+/* Search page controls */
+.search-container {
+    width: 100%;
+    max-width: 900px;
+    margin-top: 12px;
+    text-align: left;
+}
+
+.search-container h1 {
+    text-align: center;
+    color: #1b1b1b;
+    margin-bottom: 12px;
+}
+
+.search-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.search-controls input[type="text"],
+.search-controls input[type="number"],
+.search-controls select {
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.12);
+    background: #ffffff;
+    color: #111111;
+    min-width: 160px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.search-controls input:focus, .search-controls select:focus {
+    outline: 3px solid rgba(241,198,107,0.18);
+}
+
+.search-button {
+    padding: 10px 16px;
+    background: #f1c66b;
+    color: #111;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.search-button:hover { transform: translateY(-2px); }
+
+.search-results {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+@media (min-width: 900px) {
+    .search-results { grid-template-columns: 1fr 1fr; }
+}
