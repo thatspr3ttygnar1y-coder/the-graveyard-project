@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search the Archive</title>
+  <link rel="stylesheet" href="css/style.css/style.css">
+</head>
+<body>
+  <a id="backButton" href="index.html">← Home</a>
+
+  <main class="search-container">
+    <h1>Search the Archive</h1>
+
+    <div class="search-controls">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Enter a name"
+        aria-label="Search by name"
+      >
+
+      <select id="cemeteryFilter" aria-label="Filter by cemetery">
+        <option value="">All Cemeteries</option>
+        <option value="Shakopee Catholic Cemetery">Shakopee Catholic Cemetery</option>
+      </select>
+
+      <input id="yearFilter" type="number" placeholder="Death year" aria-label="Filter by year">
+
+      <label for="sortOption">Sort by:</label>
+      <select id="sortOption" aria-label="Sort results">
+        <option value="name">Name (A-Z)</option>
+        <option value="yearAsc">Year of Death (oldest first)</option>
+        <option value="yearDsc">Year of Death (newest first)</option>
+      </select>
+
+      <button class="search-button" onclick="searchGraves()">Search</button>
+    </div>
+
+    <div id="results" class="search-results" aria-live="polite"></div>
+  </main>
+
+  <script type="module" src="js/graves.js/graves.js"></script>
+</body>
+</html>
